@@ -4,7 +4,71 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-color: #1c1c1c;
+        color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(120deg, #1c1c1c 50%, #333333 50%);
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+    }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ff6600;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #dcdcdc;
+        }
+
+    .top-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cta-button {
+        padding: 10px 30px;
+        background-color: #ff6600;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+        .cta-button:hover {
+            background-color: #e55500;
+        }
+
+    .members-button {
+        margin-top: 50px;
+        display: inline-block;
+    }
+</style>
+
+<div class="hero">
+    <h1>Welcome to Fitness Center</h1>
+    <p>Your journey to health and strength starts here! Explore our personalized programs, professional trainers, and state-of-the-art equipment.</p>
+    <div class="top-buttons">
+        <a href="/Workouts" class="cta-button">Discover Our Workouts</a>
+        <a href="/Instructors" class="cta-button">Discover Our Instructors</a>
+    </div>
+    <a href="/Members" class="cta-button members-button">Members</a>
 </div>
+
+

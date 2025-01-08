@@ -1,0 +1,122 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        color: #ff6600;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-floating {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+        .form-control:focus {
+            border-color: #ff6600;
+        }
+
+    .form-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .btn-primary {
+        background-color: #ff6600;
+        border-color: #ff6600;
+        padding: 12px;
+        font-size: 1rem;
+        width: 100%;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #e55500;
+            border-color: #e55500;
+        }
+
+    .link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #ff6600;
+    }
+
+        .link:hover {
+            color: #e55500;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="form-container">
+    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Name" class="form-control" placeholder="Full Name" />
+            <label asp-for="Input.Name" class="form-label">Full Name</label>
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Phone" class="form-control" placeholder="Phone Number" />
+            <label asp-for="Input.Phone" class="form-label">Phone Number</label>
+            <span asp-validation-for="Input.Phone" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Email" class="form-control" placeholder="name@example.com" />
+            <label asp-for="Input.Email" class="form-label">Email</label>
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+            <label asp-for="Input.Password" class="form-label">Password</label>
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+            <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button id="registerSubmit" type="submit" class="btn-primary">Register</button>
+    </form>
+
+    <a class="link" asp-page="./Login">Already have an account? Log in</a>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

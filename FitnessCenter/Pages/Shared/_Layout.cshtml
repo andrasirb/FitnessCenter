@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FitnessCenter.styles.css" asp-append-version="true" />
+    <style>
+        nav {
+            background-color: #2c2f33;
+        }
+
+            nav .navbar-nav .nav-item .nav-link {
+                color: #ff6600 !important;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 10px 20px;
+                transition: color 0.3s, background-color 0.3s;
+            }
+
+                nav .navbar-nav .nav-item .nav-link:hover {
+                    color: white !important;
+                    background-color: #e55500;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+            nav .navbar-brand {
+                font-size: 1.8rem;
+                color: #ff6600 !important;
+                font-weight: bold;
+            }
+
+            nav .navbar-toggler {
+                border-color: #ff6600;
+            }
+
+            nav .navbar-toggler-icon {
+                background-color: #ff6600;
+            }
+
+        footer {
+            background-color: #2c2f33;
+            color: #f4f4f4;
+            padding: 20px 0;
+        }
+
+            footer a {
+                color: #ff6600;
+            }
+
+                footer a:hover {
+                    color: #e55500;
+                }
+    </style>
 </head>
 <body>
     <header>
@@ -26,6 +74,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
@@ -35,17 +84,15 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - FitnessCenter - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-    </footer>
-
+ 
+   </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
